@@ -11,3 +11,29 @@ NAME com o nome do usuário do postgres;
 PASS com a senha para esse usuário;
 
 Alterar em src/config/database.js o host e nome da base de dados.
+
+## Exemplo de uso (teste local no navegador)
+
+Acesse http://localhost:port
+
+### Create (Mutation)
+
+```
+mutation{
+  newUser(data:{
+    name:"",
+    email:"",
+    password:"",
+    cpf:"",
+    contacts:"",
+    address: ""
+  }){
+    id
+    name
+    email
+    cpf
+    contacts
+    address
+  }
+}
+```
