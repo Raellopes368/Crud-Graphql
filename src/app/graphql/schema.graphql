@@ -1,0 +1,32 @@
+type User {
+  id: ID
+  name: String
+  email: String
+  cpf: String
+  contacts: String
+  address: String
+}
+
+input userInput {
+  name: String
+  email: String
+  password: String
+  cpf: String
+  contacts: String
+  address: String
+  id: ID
+}
+
+type Query {
+  users: [User]!
+  user(id: ID!): User
+}
+type response {
+  status: Boolean!
+}
+
+type Mutation {
+  newUser(data: userInput!): User
+  updateUser(data: userInput): User
+  deleteUser(id: ID!): response
+}
