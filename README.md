@@ -37,3 +37,63 @@ mutation{
   }
 }
 ```
+
+### Read (Query)
+
+```
+  query{
+    users{
+      id
+      name
+      email
+      cpf
+      contacts
+      address
+    }
+  }
+```
+
+e
+
+```
+  query{
+    user(id:5){
+      id
+      name
+      email
+      cpf
+      contacts
+      address
+    }
+}
+
+```
+
+### Update (Mutation)
+
+```
+  mutation{
+  updateUser(data:{
+    id: id,
+    name: "newName",
+    email: "newEmail",
+    contacts: "newContacts",
+    address: "newAddress"
+  }){
+    id
+    name
+    email
+    cpf
+  }
+}
+```
+
+### Delete (Mutation)
+
+```
+  mutation{
+  deleteUser(id:6){
+    status
+  }
+}
+```
