@@ -1,12 +1,13 @@
 const bcrypt = require("bcrypt");
 const Users = require("../models/Users");
+const generateToken = require("../../utils/generateToken");
 
 class UsersControllers {
   async store(data) {
     const { name, email, cpf, contacts, address } = data;
     let { password } = data;
-    // const hash = await bcrypt.hashSync(password, 8);
-    // password = hash;
+    const hash = await bcrypt.hashSync(password, 8);
+    password = hash;
     const user = await Users.create({
       name,
       email,
@@ -15,6 +16,8 @@ class UsersControllers {
       contacts,
       address
     });
+    const token = generateToken(user.id);
+    user.token = token;
     return user;
   }
   async index() {

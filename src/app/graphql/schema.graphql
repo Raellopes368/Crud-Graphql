@@ -5,6 +5,8 @@ type User {
   cpf: String
   contacts: String
   address: String
+  token: String
+  error: String
 }
 
 input userInput {
@@ -20,6 +22,7 @@ input userInput {
 type Query {
   users: [User]!
   user(id: ID!): User
+  login(name: String, password: String): User
 }
 type response {
   status: Boolean!
