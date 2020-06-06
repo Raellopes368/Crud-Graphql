@@ -8,7 +8,7 @@
     "start": "node src"
   },
   "dependencies": {
-    "apollo-server-core": "^2.10.0",
+    "apollo-server-core": "^2.14.2",
     "bcrypt": "^3.0.8",
     "dotenv": "^8.2.0",
     "graphql-yoga": "^1.18.3",
